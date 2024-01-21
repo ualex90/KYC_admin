@@ -8,6 +8,7 @@ NULLABLE = {'blank': True, 'null': True}
 class User(AbstractUser):
     """ Модель пользователя """
     email = models.CharField(max_length=255, unique=True, verbose_name='Email')
+    username = models.CharField(max_length=150, **NULLABLE, verbose_name="НЕ ИСПОЛЬЗУЕТСЯ")
     last_name = models.CharField(max_length=30, verbose_name='Фамилия')
     first_name = models.CharField(max_length=30, verbose_name='Имя')
     surname = models.CharField(max_length=30, **NULLABLE, verbose_name='Отчество')

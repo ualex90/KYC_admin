@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     'django_rename_app',
 
+    'base',
     'users',
     'files'
 ]

@@ -12,9 +12,9 @@ class StatusFile(models.TextChoices):
 
 class File(models.Model):
     """ Модель файла """
-    name = models.CharField(max_length=50, verbose_name='Имя файла')
+    name = models.CharField(max_length=100, verbose_name='Имя файла')
     size = models.IntegerField(verbose_name='Размер файла')
-    content_type = models.CharField(max_length=30, verbose_name='Тип файла')
+    content_type = models.CharField(max_length=50, verbose_name='Тип файла')
     filename = models.CharField(max_length=30, unique=True, verbose_name='Имя файла на диске')
     is_public = models.BooleanField(default=False, verbose_name='Признак публичности')
     status = models.CharField(
