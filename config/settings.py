@@ -44,7 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api',
+
+    'django_rename_app',
+
+    'users',
+    'files'
 ]
 
 MIDDLEWARE = [
@@ -129,7 +133,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Модель пользователя для авторизации
-AUTH_USER_MODEL = 'api.user'
+AUTH_USER_MODEL = 'users.user'
 
 # Изменение хэшера по умолчанию
 PASSWORD_HASHERS = [

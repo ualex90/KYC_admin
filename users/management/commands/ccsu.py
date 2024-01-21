@@ -1,19 +1,13 @@
 from django.core.management import BaseCommand
 
-from api.models import User
+from users.models import User
 
 
 class Command(BaseCommand):
 
-    def add_arguments(self, parser):
-        parser.add_argument('-l', '--tg', type=str, help='Telegram ID')
-
     def handle(self, *args, **kwargs):
-        email = 'admin@sky.pro'
-        password = '123qwe'
-
         user = User.objects.create(
-            email=email,
+            email='admin@sky.pro',
             first_name='Admin',
             last_name='SkyPro',
             is_staff=True,
@@ -21,6 +15,5 @@ class Command(BaseCommand):
             is_active=True,
         )
 
-        user.set_password(password)
+        user.set_password('123qwe')
         user.save()
-        print(f'email: {email}\npassword: {password}\n')
