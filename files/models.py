@@ -1,5 +1,6 @@
 from django.db import models
 
+from config import settings
 from users.models import NULLABLE
 
 
@@ -22,8 +23,8 @@ class File(models.Model):
         default=StatusFile.UNDER_REVIEW,
         verbose_name='Статус файла'
     )
-    owner: models.ForeignKey(
-        'models.User',
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
         related_name='files',
         on_delete=models.SET_NULL,
         **NULLABLE,
