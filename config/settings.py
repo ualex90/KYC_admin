@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 
     'base',
     'users',
-    'files'
+    'files',
 ]
 
 MIDDLEWARE = [
@@ -150,3 +150,7 @@ PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.Argon2PasswordHasher",
     "django.contrib.auth.hashers.ScryptPasswordHasher",
 ]
+
+DJANGO_ADMIN_EMAIL = env('DJANGO_ADMIN_EMAIL')
+DJANGO_ADMIN_PASSWORD = env('DJANGO_ADMIN_PASSWORD')
+API_URL = env('API_URL')
