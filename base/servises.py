@@ -25,6 +25,9 @@ def create_admin_panel_user():
 
 
 def get_token():
+    """
+    Получение токена для авторизации в API
+    """
     create_admin_panel_user()
     response = requests.post(
         url=f'{settings.API_URL}/api/auth/token/',
@@ -34,7 +37,3 @@ def get_token():
         }
     )
     return response.json()
-
-
-if __name__ == "__main__":
-    print(get_token())

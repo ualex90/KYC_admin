@@ -4,7 +4,10 @@ from base.servises import get_token
 from config import settings
 
 
-def change_status(queryset, status):
+def file_change_status(queryset, status):
+    """
+    Изменение статуса файлов в API
+    """
     for item in queryset:
         token = get_token()
         response = requests.post(
@@ -13,8 +16,6 @@ def change_status(queryset, status):
             headers={'Authorization': F'{token.get("token_type")} {token.get("access_token")}'},
         )
         try:
-            json_data = response.json()
+            response.json()
         except requests.exceptions.RequestException:
-            print("Ошибка сервера")
-        else:
-            print(json_data)
+            print("API error")
